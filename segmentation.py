@@ -13,11 +13,6 @@ mask = np.array(Image.open("images/car_mask.gif").convert("L"))
 # ret, mask = cap.read()
 # cap.release()
 
-
-
-# print(image.shape)
-# print(mask.shape)
-
 transform = A.Compose(
     [
         A.Resize(width=100, height=100),

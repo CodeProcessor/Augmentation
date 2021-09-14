@@ -6,10 +6,6 @@ import cv2
 
 # image = Image.open("images/girl.jpg")
 image = cv2.imread("images/girl.jpg")
-# cv2.imshow("disp", image)
-# cv2.waitKey(0)
-
-print(image)
 
 transform = A.Compose(
     [
@@ -28,11 +24,7 @@ transform = A.Compose(
     ]
 )
 
-images_list = [image]
-
-image =np.array(image)
 for i in range(20):
     augmentations = transform(image=image)
     aug_img = augmentations["image"]
-    images_list.append(aug_img)
     cv2.imwrite(f"output/classification/out{i}.jpg", aug_img)
